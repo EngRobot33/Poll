@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %} | Main Page{% endblock %}
+
+{% block content %}
+  
+<div class ="card text-center">
+    <div class ="card-body">
+        <h1>Welcome To MaHa</h1>
+          
+<p>This is an Django polling app for <strong>System Analysis & Design</strong> project.</p>
+<p>Developed by <strong>Hamed Khosravi</strong> & <strong>Mohammadali Mojtahed Soleymani</strong></p>
+
+<br>
+  
+        <a class ="btn btn-dark" href ="{% url 'poll:index' %}">View Polls</a>
+    </div>
+</div>
+{% endblock %}

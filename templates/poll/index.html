@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} | Index{% endblock %}
+
+{% block content %}
+<h1 class ="text-center mb-3">Poll Questions</h1>
+{% if latest_questions %}
+{% for question in latest_questions %}
+<div class ="card-mb-3">
+    <div class ="card-body">
+        <p class ="lead">{{question.question_text}}</p>
+  
+        <a href ="{% url 'poll:detail' question.id %}" class ="btn btn-primary btn-sm">Vote</a>
+        <a href ="{% url 'poll:results' question.id %}" class ="btn btn-secondary btn-sm">View Results</a>
+    </div>
+</div>
+{% endfor %}
+{% else %}
+  
+<p>No polls available</p>
+  
+{% endif %}
+{% endblock %}
