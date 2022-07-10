@@ -3,7 +3,7 @@
 {% block title %} | Details{% endblock %}
 
 {% block content %}
-<a class="btn btn-secondary btn-sm mb-3" href="{% url 'poll:index' %}">Back To Polls</a>
+<a class="btn btn-secondary btn-sm mb-3" href="{% url 'poll:index' %}">BACK TO POLLS</a>
 <h1 class="text-center mb-3">{{question.question_text}}</h1>
 
 {% if error_message %}
@@ -16,11 +16,11 @@
     {% csrf_token %}
     {% for choice in question.choice_set.all %}
     <div class="form-check">
-        <input type="radio" name="choice" class="form-check-input" id="choice{{ forloop.counter }}"
-            value="{{ choice.id }}" />
+        <input type="radio" name="choice" class="form-check-input" id="choice{{forloop.counter}}"
+            value="{{choice.id}}" />
         <label for="choice{{forloop.counter}}">{{choice.choice_text}}</label>
     </div>
     {% endfor %}
-    <input type="submit" value="Vote" class="btn btn-success btn-lg btn-block mt-4" />
+    <input type="submit" value="VOTE" class="btn btn-success btn-lg btn-block mt-4" />
 </form>
 {% endblock %}
