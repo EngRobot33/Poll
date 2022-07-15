@@ -1,0 +1,10 @@
+<nav class="navbar navbar-dark bg-primary mb-4">
+    <div class="container">
+        {% if user.is_authenticated %}
+            <a class="navbar-brand" style="font-weight: bold;" href="#">Welcome, {{user.username}}!</a>
+            <a class="navbar-brand float-right" style="font-weight: bold;" href="{% url 'user:logout' %}">Logout</a>
+        {% else %}
+            <a class="navbar-brand" style="font-weight: bold;" href="/">Main Page</a>
+        {% endif %}
+    </div>
+</nav>
